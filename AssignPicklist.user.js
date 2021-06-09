@@ -58,8 +58,9 @@
         window.open("/picklist_group/create");
     }
 
-
-    idSpan.appendChild(buttonCopy14);
+    if(i>14){
+        idSpan.appendChild(buttonCopy14);
+    }
     idSpan.appendChild(button);
     idPickList.appendChild(newContent);
     idSpan.appendChild(idPickList);
