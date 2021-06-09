@@ -8,4 +8,4 @@ Script titles can be clicked to get the install URL
 
 # [OBPS Helper](https://github.com/dvglenn/TMScripts/raw/main/OBPSHelper.user.js)
 ### Adds "Add SP00" and "ADD ASIN" buttons to Problem Solve screen.  These are simple shortcuts to remove the requirement to copy/paste the SP00 and ASIN while doing problem solves.
-![OBPS Helper](https://i.imgur.com/mHRbMeA.jpg)
+![OBPS Helper](https://i.imgur.com/s6sUHSm.png)
