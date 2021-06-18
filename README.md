@@ -15,4 +15,4 @@ Click on each of the blue links  to get the install URL
 
 # [Missing Expirations Inventory Helper](https://github.com/dvglenn/TMScripts/raw/main/MissingExpirationInventoryHelper.user.js)
 ### Used in conjunction with the above "Missing Expirations Helper", when doing Missing Expirations and use the "View" button, it will highlight the first row with that has a missing expiration date and will place the focus in the date box allowing you to immediately type in the new expiration date without having to click into the date text box.
-![Missing Expirations Inventory Helper](https://i.imgur.com/la0Pl1z.png | width=100)
+![Missing Expirations Inventory Helper]<img src="https://i.imgur.com/la0Pl1z.png" width="25%" >
