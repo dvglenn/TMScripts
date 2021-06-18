@@ -1,4 +1,3 @@
-# UserScripts
 ###### Made by David Glenn @dvglenn
 Script titles can be clicked to get the install URL
 
