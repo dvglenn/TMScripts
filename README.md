@@ -1,5 +1,5 @@
 # UserScripts
-###### Made by @dvglenn
+###### Made by David Glenn @dvglenn
 Script titles can be clicked to get the install URL
 
 # [Assign Picklist](https://github.com/dvglenn/TMScripts/raw/main/AssignPicklist.user.js)
