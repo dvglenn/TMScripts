@@ -18,5 +18,5 @@ Click on each of the blue links  to get the install URL
 <img src="https://i.imgur.com/la0Pl1z.png" width="75%" >
 
 # [Idle Time Focus](https://github.com/dvglenn/TMScripts/raw/main/IdleTimeFocus.user.js)
-### Sets the focus to the first dropdown where "Idle" is currently selected.  This alleviates the endless scrolling through all of the records to get to the one you need likely need to adjust.
+### Sets the focus to the first dropdown where "Idle" is currently selected.  This alleviates the endless scrolling through all of the records to get to the one you likely need to examine.
 <img src="https://i.imgur.com/53naewz.png" width="75%" >
