@@ -23,5 +23,5 @@ Click on each of the blue links  to get the install URL
 
 
 # [Picklist Count by user](https://github.com/dvglenn/TMScripts/raw/main/PicklistCountByUser.user.js)
-### Shows summary of all AA's with a picklist currently assigned to them.
+### Shows summary of all AA's with a picklist currently assigned to them.  After installing, you can view the summary table via the Picklist Group page (https://aftlite-portal.amazon.com/picklist_group).
 <img src="https://i.imgur.com/wwtIgve.png" width="50%" >
