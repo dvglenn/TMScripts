@@ -283,7 +283,7 @@
             }
             request.send();
 
-            autoReload(90);
+            autoReload(30);
 
 
             //console.log("shelbrut: " + dictUserAction[dg]);
