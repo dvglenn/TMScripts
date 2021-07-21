@@ -20,3 +20,8 @@ Click on each of the blue links  to get the install URL
 # [Idle Time Focus](https://github.com/dvglenn/TMScripts/raw/main/IdleTimeFocus.user.js)
 ### Sets the focus to the first dropdown where "Idle" is currently selected.  This alleviates the endless scrolling through all of the records to get to the one you likely need to examine.
 <img src="https://i.imgur.com/53naewz.png" width="75%" >
+
+
+# [Picklist Count by user](https://github.com/dvglenn/TMScripts/raw/main/PicklistCountByUser.user.js)
+### Shows summary of all AA's with a picklist currently assigned to them.
+<img src="https://i.imgur.com/wwtIgve.png" width="50%" >
