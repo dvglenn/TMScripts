@@ -26,6 +26,6 @@ Click on each of the blue links  to get the install URL
 ### Shows summary of all AA's with a picklist currently assigned to them.  After installing, you can view the summary table via the <a href="https://aftlite-portal.amazon.com/picklist_group">Picklist Group</a> page.
 <img src="https://i.imgur.com/wwtIgve.png" width="50%" >
 
-# [Picklist Count by user](https://github.com/dvglenn/TMScripts/raw/main/PicklistCountByUserWithRate.user.js)
+# [Picklist Count by user WITH Rate](https://github.com/dvglenn/TMScripts/raw/main/PicklistCountByUserWithRate.user.js)
 ### Shows summary of all AA's with a picklist currently assigned to them.  This one also include the AA's rate for the prior hour.  This requires you to be connected to VPN and to use NA instead of Portal.  After installing, you can view the summary table via the <a href="https://aftlite-na.amazon.com/picklist_group">Picklist Group</a> page.
 <img src="https://i.imgur.com/JbJcwzv.png" width="50%" >
