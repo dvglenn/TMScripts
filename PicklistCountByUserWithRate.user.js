@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         PicklistCountByUserWithRate
 // @namespace    https://github.com/dvglenn/TMScripts
-// @version      0.2
-// @description  TESTING
+// @version      0.3
+// @description  Dashboard to show which AA's have a picklist assigned to them and some vital details
 // @author       dvglenn@
 // @match        https://aftlite-na.amazon.com/picklist_group/index
 // @match        https://aftlite-na.amazon.com/picklist_group
@@ -172,7 +172,7 @@
                     var tHead = document.createElement("thead");
                     //console.log("before thead")
                     tbl.nowrap;
-                    tHead.innerHTML+="<tr style=\"background-color:powderblue;font-size:20px;text-align:center;\"><th style=\"font-size:20px;text-align:center;\">Username</th><th style=\"font-size:20px;text-align:center;\">Bag Count</th><th style=\"font-size:20px;text-align:center;\">Total Items</th><th style=\"font-size:20px;text-align:center;\">Zone</th><th nowrap style=\"font-size:20px;text-align:center;\">Last Scan</th><th style=\"font-size:20px;text-align:center;\">Last Action</th><th style=\"font-size:20px;text-align:center;\">Rate Last Hour</th></tr>";
+                    tHead.innerHTML+="<tr style=\"background-color:powderblue;font-size:20px;text-align:center;\"><th style=\"font-size:20px;text-align:center;\">Username</th><th style=\"font-size:20px;text-align:center;\">Bag Count</th><th style=\"font-size:20px;text-align:center;\">Total Items</th><th style=\"font-size:20px;text-align:center;\">Zone</th><th nowrap style=\"font-size:20px;text-align:center;\">Last Scan</th><th style=\"font-size:20px;text-align:center;\">Last Action</th><th style=\"font-size:20px;text-align:center;\">Rate Last Hour<br>Goal: 100+</th></tr>";
 
                     tbl.appendChild(tHead);
                     //cellUser.style.fontSize="20px";
