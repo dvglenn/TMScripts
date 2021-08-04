@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DGIOLHelper
 // @namespace    https://github.com/dvglenn/TMScripts
-// @version      0.2
+// @version      0.3
 // @description  IOL Helper script that highlights row you've already clicked on and makes it so when you click on a Location hyperlink it opens in another tab instead of the same tab.
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/inventory_in_odd_location_report*
