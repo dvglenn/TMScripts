@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DGInventoryFocus
 // @namespace    https://github.com/dvglenn/TMScripts
-// @version      0.1
+// @version      0.2
 // @description  Enables ENTER key to submit page on "Confirm Lost Inventory" page
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/inventory/view_inventory_at*
