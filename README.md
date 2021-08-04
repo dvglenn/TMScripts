@@ -5,9 +5,11 @@ Click on each of the blue links  to get the install URL
 ### Shows summary of all AA's with a picklist currently assigned to them.  This one also include the AA's rate for the prior hour.  This requires you to be connected to VPN and to use AftLite NA instead of AftLite Portal.  After installing, you can view the summary table via the <a href="https://aftlite-na.amazon.com/picklist_group">Picklist Group</a> page.
 <img src="https://i.imgur.com/JbJcwzv.png" width="50%" >
 
+<!--
 # [Picklist Dashboard](https://github.com/dvglenn/TMScripts/raw/main/PicklistCountByUser.user.js)
 ### Shows summary of all AA's with a picklist currently assigned to them.  This will work via either AftLite NA or Portal. After installing, you can view the summary table via the <a href="https://aftlite-portal.amazon.com/picklist_group">Picklist Group</a> page.
 <img src="https://i.imgur.com/wwtIgve.png" width="50%" >
+-->
 
 # [OBPS Helper](https://github.com/dvglenn/TMScripts/raw/main/OBPSHelper.user.js)
 ### Adds "Add SP00" and "ADD ASIN" buttons to Problem Solve screen.  These are simple shortcuts to remove the requirement to copy/paste the SP00 and ASIN while doing problem solves.
