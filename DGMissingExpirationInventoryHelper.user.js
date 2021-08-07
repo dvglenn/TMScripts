@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DGMissingExpirationInventoryHelper
 // @namespace    https://github.com/dvglenn/TMScripts
-// @version      0.4
+// @version      0.5
 // @description  Turn ASINs into clickable links that open inventory
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/inventory/view_inventory_for_asin_display/index
@@ -15,7 +15,7 @@
     window.addEventListener('load',() => {
         checkCookieExists("MissingExpirations");
 
-        var delayInMilliseconds = 100;
+        var delayInMilliseconds = 200;
         setTimeout(function() {
 
             var table = document.getElementsByTagName("table")[0];
@@ -31,6 +31,7 @@
 
                     //console.log('The page is fully loaded.');
                     document.getElementsByTagName("table")[0].rows.item(i).cells.item(5).getElementsByTagName("input")[0].focus();
+                    return;
                 }
             }
         }, delayInMilliseconds);
