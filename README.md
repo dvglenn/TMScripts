@@ -39,3 +39,7 @@ Click on each of the blue links  to get the install URL
 
 # [Validate Inventory Helper](https://github.com/dvglenn/TMScripts/raw/main/DGValidateInventoryEnterButton.user.js)
 ### Sets the focus to the Yes button to make it easier and quicker to clear IOL without using a mouse.
+
+# [Dock Received NYR Pallet Helper](https://github.com/dvglenn/TMScripts/raw/main/DGDockReceivedNYRPallets.user.js)
+### Adds an additional column to the Dock Received page that allows you the option to close any existing NYR pallets that are open for the PO.  This makes it so that you don't have to bounce between the Dock Received page and the NYR Pallets page to get everything closed out.
+<img src="https://i.imgur.com/XiPEOIF.png" width="75%" >
