@@ -24,7 +24,7 @@ Click on each of the blue links  to get the install URL
 <img src="https://i.imgur.com/53naewz.png" width="75%" >
 
 # [Missing Expirations Helper](https://github.com/dvglenn/TMScripts/raw/main/DGMissingExpirationHelper.user.js)
-### Adds "View" Button for each ASIN in the Missing Expirations list.  When this button is clicked, it will open the Inventory tool in a separate window. This eliminates the need to highlight, copy, switch to the inventory page, and paste in the ASIN and replaces it with a single click of the button.
+### Adds ability to sort table by clicking on column headers.  Also adds "View" Button for each ASIN in the Missing Expirations list.  When this button is clicked, it will open the Inventory tool in a separate window. This eliminates the need to highlight, copy, switch to the inventory page, and paste in the ASIN and replaces it with a single click of the button.
 <img src="https://i.imgur.com/UBwduVa.png" width="40%" >
 
 # [Missing Expirations Inventory Helper](https://github.com/dvglenn/TMScripts/raw/main/DGMissingExpirationInventoryHelper.user.js)
