@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PicklistCountByUserWithRate
 // @namespace    https://github.com/dvglenn/TMScripts
-// @version      0.3
+// @version      0.4
 // @description  Dashboard to show which AA's have a picklist assigned to them and some vital details
 // @author       dvglenn@
 // @match        https://aftlite-na.amazon.com/picklist_group/index
@@ -213,6 +213,16 @@
                         cellZone.style.fontSize="20px";
                         cellTime.style.fontSize="20px";
                         cellAction.style.fontSize="20px";
+
+                        try {
+                            if (dictUserAction[user] != "pack") {
+                                cellAction.style.background = "orange";
+                            }
+                        } catch {
+                            //do nothing
+                        }
+
+
                         cellUser.style.textAlign="center";
                         cellCount.style.textAlign="center";
                         cellItemCount.style.textAlign="center";
@@ -274,7 +284,7 @@
                     //     tbl.setAttribute("font-size", "0.9em");
                     //     tbl.style.backgroundColor = "yellow";
                     //     tbl.style.fontSize="0.9em";
-                    tbl.style.width = "800px";
+                    tbl.style.width = "900px";
                     //tbl.before(document.createElement("br"));
                     tbl.after(document.createElement("br"));
 
