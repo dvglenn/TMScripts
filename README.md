@@ -43,3 +43,7 @@ Click on each of the blue links  to get the install URL
 # [Dock Received NYR Pallet Helper](https://github.com/dvglenn/TMScripts/raw/main/DGDockReceivedNYRPallets.user.js)
 ### Adds an additional column to the Dock Received page that allows you the option to close any existing NYR pallets that are open for the PO.  This makes it so that you don't have to bounce between the Dock Received page and the NYR Pallets page to get everything closed out.
 <img src="https://i.imgur.com/XiPEOIF.png" width="75%" >
+
+# [PO ASIN Lookup Helper](https://github.com/dvglenn/TMScripts/raw/main/DGPOAsinLookupHelper.user.js)
+### Adds "Open" link next to the PO to give the option to go directly to Dock Receive for that specific PO.
+<img src="https://i.imgur.com/RmM7EvZ.png" width="40%" >
