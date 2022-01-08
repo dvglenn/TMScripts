@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssignPicklist
 // @namespace    https://github.com/jgray0705/UserScripts
-// @version      0.2
+// @version      0.3
 // @description  Print out pick list IDs for Manual bigs assignments
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/list_picklist/view_picklists*
@@ -58,6 +58,23 @@
         window.open("/picklist_group/create");
     }
 
+    let buttonCopy7 = document.createElement("button");
+    buttonCopy7.innerHTML = "Copy 7";
+    buttonCopy7.onclick = function() {
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, 55);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        window.open("/picklist_group/create");
+    }
+
+    if(i>7){
+        idSpan.appendChild(buttonCopy7);
+    }
     if(i>14){
         idSpan.appendChild(buttonCopy14);
     }
