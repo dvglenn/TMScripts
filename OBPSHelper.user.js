@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OBPSHelper
 // @namespace    https://github.com/dvglenn/TMScripts
-// @version      0.1
+// @version      0.2
 // @description  Print out pick list IDs for Manual bigs assignments
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/picklist/view_pack_by_picklist
@@ -67,6 +67,79 @@
         console.log("createButton success");
         return button;
     }
+
+    //NEW CODE - Add AA login to the page to be easier to see who picked this list
+
+            //Get the Picklist from the top of the current page
+            const stringToFind = "Problem Solve:Pack picklist ";
+            //console.log(stringToFind);
+            var PickListPS;
+            let HTML = document.documentElement.outerHTML;
+            //console.log("we got past HTML");
+            let position = HTML.search(stringToFind);
+            //console.log("we got past position");
+            //console.log("Position: " + position);
+            //console.log(position);
+            if(position>0) {
+                console.log("DEBUG: this is a PS, continue with code")
+                //console.log(stringToFind.length);
+                position = position + stringToFind.length;
+                //console.log("Current position: " + position);
+                PickListPS = HTML.substr(position, 7).trim();
+                //console.log("PickListPS: " + PickListPS);
+            } else {
+                console.log("DEBUG: Not a problem solve, exiting code");
+                return;
+            }
+
+            console.log("Picklist to check: " + PickListPS);
+
+            let request = new XMLHttpRequest();
+            request.open("GET", "/view_dwell_time/picklist?value=problem-solve", true);
+            request.responseType = "document";
+            request.onloadend = function() {
+                if(request.readyState == 4 && request.status == 200) {
+
+                    var userName = "";
+                    var PickListFromTable = "";
+                    //var PickListPS = "4821367";
+
+                    let xtable = request.responseXML.getElementsByClassName("a-bordered a-vertical-stripes a-spacing-top-large")[0];
+
+                    //console.log(xtable);
+                    var cnt=0;
+                    for(let row of xtable.rows) {
+                        if (cnt>0) {
+                            userName = row.cells[6].getElementsByTagName("p")[0].innerHTML;
+                            PickListFromTable = row.cells[5].getElementsByTagName("p")[0].innerHTML;
+                            console.log("UserName: " + userName);
+                            console.log("PickListPS: " + PickListPS);
+
+                            if (PickListFromTable==PickListPS) {
+                                //alert("This is the Picker: " + userName);
+                                var ptag = document.createElement("p");
+                                var ptext = document.createTextNode("Picked by: " + userName);
+                                console.log("1");
+                                ptag.appendChild(ptext);
+                                console.log("2");
+                                var element = document.getElementsByTagName("h3")[0];
+                                console.log("3");
+                                element.appendChild(ptag);
+                                console.log("4");
+                            }
+                        }
+                        cnt++;
+                    }
+
+
+
+                }
+            }
+            request.send();
+
+
+
+
 
 })();
 
