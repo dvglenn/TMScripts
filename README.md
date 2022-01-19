@@ -16,7 +16,7 @@ Click on each of the blue links  to get the install URL
 <img src="https://i.imgur.com/CnBwJc4.png" width="40%" >
 
 # [Assign Picklist](https://github.com/dvglenn/TMScripts/raw/main/AssignPicklist.user.js)
-### Adds Copy All button to bottom of View Picklist screen. When pressed, it copies all of the picklists and opens the Assign Picklist Screen where you can then manually type in an AA's username and then paste the copied picklists to be assigned. Update 01/29/22: Added 4/5/7/10/20/25 buttons in adddition to original 14 button.
+### Adds Copy All button to bottom of View Picklist screen. When pressed, it copies all of the picklists and opens the Assign Picklist Screen where you can then manually type in an AA's username and then paste the copied picklists to be assigned. Update 01/19/22: Added 4/5/7/10/20/25 buttons in adddition to original 14 button.
 <img src="https://i.imgur.com/TaxoZxz.png" width="75%" >
 
 # [Idle Time Focus](https://github.com/dvglenn/TMScripts/raw/main/IdleTimeFocus.user.js)
