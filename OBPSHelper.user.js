@@ -3,6 +3,7 @@
 // @namespace    https://github.com/dvglenn/TMScripts
 // @version      0.2
 // @description  Print out pick list IDs for Manual bigs assignments
+// @description  01/19/2022: added "Picked By: " to the top of the screen
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/picklist/view_pack_by_picklist
 // @grant        none
