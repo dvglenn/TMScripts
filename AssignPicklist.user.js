@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssignPicklist
 // @namespace    https://github.com/jgray0705/UserScripts
-// @version      0.3
+// @version      0.4
 // @description  Print out pick list IDs for Manual bigs assignments
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/list_picklist/view_picklists*
@@ -33,6 +33,14 @@
     //idPickList.appendChild(newContent);
     //document.body.appendChild(idSpan);
 
+    let arrPickList = PickListString.split(" ");
+      // add 1 to include spaces
+    let lenPickListID = (arrPickList[0].length+1);
+
+    console.log("Picklist length: " + lenPickListID);
+
+
+
     let button = document.createElement("button");
     button.innerHTML = "Copy All";
     button.onclick = function() {
@@ -44,13 +52,15 @@
         window.open("/picklist_group/create");
     }
 
-    let buttonCopy14 = document.createElement("button");
-    buttonCopy14.innerHTML = "Copy 14";
-    buttonCopy14.onclick = function() {
+    let buttonCopy4 = document.createElement("button");
+    buttonCopy4.innerHTML = "Copy 4";
+    buttonCopy4.onclick = function() {
+        const NumberOfIDToCopy = 4;
         var r = document.createRange();
         const nodePickList = document.getElementById("idPickList").childNodes[0];
         r.setStart(nodePickList, 0);
-        r.setEnd(nodePickList, 112);
+        console.log(NumberOfIDToCopy);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
         //r.selectNode(document.getElementById("idPickList"));
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
@@ -58,13 +68,31 @@
         window.open("/picklist_group/create");
     }
 
+    let buttonCopy5 = document.createElement("button");
+    buttonCopy5.innerHTML = "Copy 5";
+    buttonCopy5.onclick = function() {
+        const NumberOfIDToCopy = 5;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        console.log(NumberOfIDToCopy);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        window.open("/picklist_group/create");
+    }
+
+    //NumberOfIDToCopy = 7;
     let buttonCopy7 = document.createElement("button");
     buttonCopy7.innerHTML = "Copy 7";
     buttonCopy7.onclick = function() {
+        const NumberOfIDToCopy = 7;
         var r = document.createRange();
         const nodePickList = document.getElementById("idPickList").childNodes[0];
         r.setStart(nodePickList, 0);
-        r.setEnd(nodePickList, 55);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
         //r.selectNode(document.getElementById("idPickList"));
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
@@ -72,12 +100,95 @@
         window.open("/picklist_group/create");
     }
 
+    //NumberOfIDToCopy = 10;
+    let buttonCopy10 = document.createElement("button");
+    buttonCopy10.innerHTML = "Copy 10";
+    buttonCopy10.onclick = function() {
+        const NumberOfIDToCopy = 10;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        window.open("/picklist_group/create");
+    }
+
+    //NumberOfIDToCopy = 14;
+    let buttonCopy14 = document.createElement("button");
+    buttonCopy14.innerHTML = "Copy 14";
+    buttonCopy14.onclick = function() {
+        const NumberOfIDToCopy = 14;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        window.open("/picklist_group/create");
+    }
+
+    //NumberOfIDToCopy = 20;
+    let buttonCopy20 = document.createElement("button");
+    buttonCopy20.innerHTML = "Copy 20";
+    buttonCopy20.onclick = function() {
+        const NumberOfIDToCopy = 20;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        window.open("/picklist_group/create");
+    }
+
+    //NumberOfIDToCopy = 25;
+    let buttonCopy25 = document.createElement("button");
+    buttonCopy25.innerHTML = "Copy 25";
+    buttonCopy25.onclick = function() {
+        const NumberOfIDToCopy = 25;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        window.open("/picklist_group/create");
+    }
+
+
+
+    if(i>4){
+        idSpan.appendChild(buttonCopy4);
+    }
+    if(i>5){
+        idSpan.appendChild(buttonCopy5);
+    }
     if(i>7){
         idSpan.appendChild(buttonCopy7);
+    }
+    if(i>10){
+        idSpan.appendChild(buttonCopy10);
     }
     if(i>14){
         idSpan.appendChild(buttonCopy14);
     }
+    if(i>20){
+        idSpan.appendChild(buttonCopy20);
+    }
+    if(i>25){
+        idSpan.appendChild(buttonCopy25);
+    }
+
+
     idSpan.appendChild(button);
     idPickList.appendChild(newContent);
     idSpan.appendChild(idPickList);
