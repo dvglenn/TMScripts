@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssignPicklist
 // @namespace    https://github.com/jgray0705/UserScripts
-// @version      0.4
+// @version      0.5
 // @description  Print out pick list IDs for Manual bigs assignments
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/list_picklist/view_picklists*
@@ -12,6 +12,7 @@
     'use strict';
 
     // Your code here...
+
     let table = window.location.href.match("aftlite-na") ? document.querySelectorAll("table")[1] : document.querySelectorAll("table")[0];
 
     var PickListString = "";
@@ -39,6 +40,8 @@
 
     console.log("Picklist length: " + lenPickListID);
 
+    var AssignList;
+
 
 
     let button = document.createElement("button");
@@ -50,6 +53,25 @@
         window.getSelection().addRange(r);
         document.execCommand("copy");
         window.open("/picklist_group/create");
+    }
+
+    let buttonCopy3 = document.createElement("button");
+    buttonCopy3.innerHTML = "Copy 3";
+    buttonCopy3.onclick = function() {
+        const NumberOfIDToCopy = 3;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        //console.log(NumberOfIDToCopy);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        console.log(r);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        window.getSelection.toString();
+        document.execCommand("copy");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     let buttonCopy4 = document.createElement("button");
@@ -65,7 +87,8 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     let buttonCopy5 = document.createElement("button");
@@ -81,7 +104,8 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     //NumberOfIDToCopy = 7;
@@ -97,7 +121,25 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
+    }
+
+    //NumberOfIDToCopy = 8;
+    let buttonCopy8 = document.createElement("button");
+    buttonCopy8.innerHTML = "Copy 8";
+    buttonCopy8.onclick = function() {
+        const NumberOfIDToCopy = 8;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     //NumberOfIDToCopy = 10;
@@ -113,7 +155,8 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     //NumberOfIDToCopy = 14;
@@ -129,7 +172,8 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     //NumberOfIDToCopy = 20;
@@ -145,7 +189,8 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     //NumberOfIDToCopy = 25;
@@ -161,11 +206,15 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
 
 
+    if(i>3){
+        idSpan.appendChild(buttonCopy3);
+    }
     if(i>4){
         idSpan.appendChild(buttonCopy4);
     }
@@ -174,6 +223,9 @@
     }
     if(i>7){
         idSpan.appendChild(buttonCopy7);
+    }
+    if(i>8){
+        idSpan.appendChild(buttonCopy8);
     }
     if(i>10){
         idSpan.appendChild(buttonCopy10);
@@ -203,6 +255,14 @@
     //document.getElementById("idPickList").style.padding = "10px 3px 10px 10px";
     //var p = document.createElement("p");
     //document.body.appendChild(p);
+
+
+function createCookie(name, value) {
+    var date = new Date();
+    date.setTime(date.getTime()+(' + cookieTime + '*1000));
+    var expires = "; expires="+date.toGMTString();
+    document.cookie = name+"="+value+expires+"; path=/";
+}
 
 })();
 
