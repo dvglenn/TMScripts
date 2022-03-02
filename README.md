@@ -16,8 +16,12 @@ Click on each of the blue links  to get the install URL
 <img src="https://i.imgur.com/CnBwJc4.png" width="40%" >
 
 # [Assign Picklist](https://github.com/dvglenn/TMScripts/raw/main/AssignPicklist.user.js)
-### Adds Copy All button to bottom of View Picklist screen. When pressed, it copies all of the picklists and opens the Assign Picklist Screen where you can then manually type in an AA's username and then paste the copied picklists to be assigned. Update 01/19/22: Added 4/5/7/10/20/25 buttons in adddition to original 14 button.
+### Adds Copy All button to bottom of View Picklist screen. When pressed, it copies all of the picklists and opens the Assign Picklist Screen where you can then manually type in an AA's username and then paste the copied picklists to be assigned. Update 01/19/22: Added 4/5/7/10/20/25 buttons in adddition to original 14 button.  UPDATE 03/802/22:  Now adds the selected picklists to the URL of the Assignment Page where the "Assign Picklist Helper" script grabs them and automatically adds them to the "Enter picklist ID's" text box so that you no longer have to paste the values into that box.  Requires the "Assign Picklist Helper" script to be installed as well.
 <img src="https://i.imgur.com/TaxoZxz.png" width="75%" >
+
+# [Assign Picklist Helper](https://github.com/dvglenn/TMScripts/raw/main/AssignPicklistHelper.user.js)
+### Works in conjunction with the above "Assign Picklist" script to pick up the picklist IDs from the URL and automatically adds them to the "Enter picklist ID's" text box.
+<img src="https://i.imgur.com/1vlMs9d.png" width="75%" >
 
 # [Idle Time Focus](https://github.com/dvglenn/TMScripts/raw/main/IdleTimeFocus.user.js)
 ### Sets the focus to the first dropdown where "Idle" is currently selected.  This alleviates the endless scrolling through all of the records to get to the one you likely need to examine.
