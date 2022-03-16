@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name         FindPeopleTools
 // @namespace    https://github.com/jgray0705/userscripts
-// @namespace    https://github.com/dvglenn/TMScripts
-// @version      9.1.1
-// @description  Add auto refresh and highlight idle logins, DVGLENN added click links to auto OBINDIRECT or IBINDIRECT users.  Links in BLUE.
+// @namespace    https://github.com/dvglenn/userscripts
+// @version      10.0.1
+// @description  Add auto refresh and highlight idle logins @dvglenn added clickable links to auto indirect for Pack/Receive/Stow
 // @author       grajef@
 // @author       dvglenn@
 // @match        https://aftlite-na.amazon.com/labor_tracking/find_people*
 // @match        https://aftlite-portal.amazon.com/labor_tracking/find_people*
-// @downloadURL  https://github.com/dvglenn/TMScripts/raw/master/FindPeopleTools.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -224,26 +223,6 @@ function createFunctionTable(map) {
                     action.innerHTML = "stow->ibindirect";
                 }
         }
-//        switch (entry[1][0]) {
-//            case "pack":
-//                action.innerHTML="<font color='blue'>"+currentFunction+"</font>";
-//                action.onclick = function() {
-//                    submitIndirectForm(entry[0], "obindirect", "")
-//                    action.innerHTML = "pack->obindirect";
-//               }
-//            case "stow":
-//                action.innerHTML="<font color='blue'>"+currentFunction+"</font>";
-//                action.onclick = function() {
-//                    submitIndirectForm(entry[0], "ibindirect", "")
-//                    action.innerHTML = "stow->ibindirect";
-//                }
-//            case "receive/receive_direct":
-//            case "receive/receive2_direct":
-//                action.innerHTML="<font color='blue'>"+currentFunction+"</font>";
-//                action.onclick = function() {
-//                    submitIndirectForm(entry[0], "ibindirect", "")
-//                    action.innerHTML = "receive->ibindirect";
-//                }
         //END OF CHANGES: DVGLENN
         time.innerHTML = entry[1][2];
         login.style.width = "80px";
@@ -259,8 +238,18 @@ function createFunctionTable(map) {
     return table;
 }
 function addSchedule(row) {
+    let startDate = new Date();
+    let endDate = new Date(startDate.getTime() + 3600000 * 24);
+    let sMonth = startDate.getMonth() >= 9 ? startDate.getMonth() + 1 : "0" + (startDate.getMonth() + 1);
+    let sDay = startDate.getDate() >= 10 ? startDate.getDate() : "0" + startDate.getDate();
+    let sYear = startDate.getFullYear();
+    let eMonth = endDate.getMonth() >= 9 ? endDate.getMonth() + 1 : "0" + (endDate.getMonth() + 1);
+    let eDay = endDate.getDate() >= 10 ? endDate.getDate() : "0" + endDate.getDate();
+    let eYear = endDate.getFullYear();
     let login = row.cells[2].getElementsByTagName('a')[0].innerHTML;
-    let url = "<a href='http://precision.integ.amazon.com:8080/schedulelookup?login=" + login + "' target='_blank'>";
+    let start = sYear + "-" + sMonth + "-" + sDay;
+    let end = eYear + "-" + eMonth + "-" + eDay;
+    let url = "<a href='http://precision.integ.amazon.com:8080/schedulelookup?login=" + login + "&start=" + start + "&end=" + end + "' target='_blank'>";
     row.cells[3].innerHTML = url + "Show Schedule</a>";
 }
 
@@ -338,22 +327,14 @@ function submitIndirectForm(login, code, indirectForm) {
     data.append("code", code);
     data.append("utf8", "x2713");
 
-    console.log("DG1" + login + " " + code);
-
     let request = new XMLHttpRequest();
     let action = window.location.href.match("aftlite-na") ? '/indirect_action/signin_indirect_action' : '/indirect_action/validate_name_and_code';
-    console.log("DG2: "+action);
     request.open('POST', action);
-    console.log("DG3");
     request.responseType = "document";
-    console.log("DG4");
     request.onload = function() {
         let f = document.getElementById("Flash");
         if(f !== null) { f.innerHTML = this.responseXML.getElementById("Flash").innerHTML; }
-        //else { indirectForm.before(this.responseXML.getElementById("Flash")); }
+        else { indirectForm.before(this.responseXML.getElementById("Flash")); }
     }
-    console.log("DG5: " + data);
     request.send(data);
-    console.log("DG6");
 }
-
