@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AssignPicklist
 // @namespace    https://github.com/jgray0705/UserScripts
-// @version      0.5
+// @version      0.7
 // @description  Print out pick list IDs for Manual bigs assignments
 // @author       dvglenn@
 // @match        https://aftlite-portal.amazon.com/list_picklist/view_picklists*
@@ -21,6 +21,19 @@
         if(i>0) {
             PickListString = PickListString + row.cells[0].innerText;
             PickListString = PickListString + " ";
+            //console.log("DG1: " + row.cells[0].innerText);
+            var myAnchor = row.cells[0].getElementsByTagName("a")[0];
+            var myAnchorLink = myAnchor.href;
+            //console.log("DG2: " + myAnchor.href);
+            console.log("DG1: " + myAnchorLink);
+            myAnchorLink = myAnchorLink.replace("view_picklist", "pack_by_picklist");
+            console.log("DG2: " + myAnchorLink);
+            myAnchor.href = myAnchorLink;
+
+            //row.cells[0].getElementsByTagName("a")[0].href.replace("view_picklist", "pack_by_picklist");
+            //var myText = row.cells[0].toString();
+            //myText = myText.replace("view_picklist", "pack_by_picklist");
+            //console.log("DG2: " + myText);
         }
         i=i+1;
     }
@@ -52,7 +65,28 @@
         window.getSelection().removeAllRanges();
         window.getSelection().addRange(r);
         document.execCommand("copy");
-        window.open("/picklist_group/create");
+//        window.open("/picklist_group/create");
+        AssignList = PickListString;
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
+    }
+
+    let buttonCopy2 = document.createElement("button");
+    buttonCopy2.innerHTML = "Copy 2";
+    buttonCopy2.onclick = function() {
+        const NumberOfIDToCopy = 2;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        //console.log(NumberOfIDToCopy);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        console.log(r);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        window.getSelection.toString();
+        document.execCommand("copy");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
     let buttonCopy3 = document.createElement("button");
@@ -159,6 +193,23 @@
         window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
     }
 
+    //NumberOfIDToCopy = 12;
+    let buttonCopy12 = document.createElement("button");
+    buttonCopy12.innerHTML = "Copy 12";
+    buttonCopy12.onclick = function() {
+        const NumberOfIDToCopy = 12;
+        var r = document.createRange();
+        const nodePickList = document.getElementById("idPickList").childNodes[0];
+        r.setStart(nodePickList, 0);
+        r.setEnd(nodePickList, lenPickListID*NumberOfIDToCopy);
+        //r.selectNode(document.getElementById("idPickList"));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand("copy");
+        AssignList = PickListString.substring(0,lenPickListID*NumberOfIDToCopy);
+        window.open("/picklist_group/create?AssignList="+AssignList.trim().replace(/ /g, "x"));
+    }
+
     //NumberOfIDToCopy = 14;
     let buttonCopy14 = document.createElement("button");
     buttonCopy14.innerHTML = "Copy 14";
@@ -211,7 +262,9 @@
     }
 
 
-
+    if(i>2){
+        idSpan.appendChild(buttonCopy2);
+    }
     if(i>3){
         idSpan.appendChild(buttonCopy3);
     }
@@ -229,6 +282,9 @@
     }
     if(i>10){
         idSpan.appendChild(buttonCopy10);
+    }
+    if(i>12){
+        idSpan.appendChild(buttonCopy12);
     }
     if(i>14){
         idSpan.appendChild(buttonCopy14);
