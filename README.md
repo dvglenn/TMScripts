@@ -51,3 +51,6 @@ Click on each of the blue links  to get the install URL
 # [PO ASIN Lookup Helper](https://github.com/dvglenn/TMScripts/raw/main/DGPOAsinLookupHelper.user.js)
 ### Adds "Open" link next to the PO to give the option to go directly to Dock Receive for that specific PO.
 <img src="https://i.imgur.com/RmM7EvZ.png" width="40%" >
+
+# [Find People Tools](https://github.com/dvglenn/TMScripts/raw/main/FindPeopleTools.user.js)
+### Original script written by jgrey0705.  I added clickable links for Pack/Receive/Stow that are in blue. When clicking on these, it will automatically labor track the AA to either OBINDIRECT (if Pack) or IBINDIRECT (if Receive or Stow).
